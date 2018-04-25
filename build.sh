@@ -76,7 +76,7 @@ case "$TRAVIS_OS_NAME" in
     # Retrieve Latest Server Binaries
     sudo apt-get install jq
     cd temp/
-    curl -u $GITHUB_USER:$GITHUB_TOKEN -s https://api.github.com/repos/OpenBazaar/openbazaar-go/releases/$SERVERTAG > release.txt
+    curl -u $GITHUB_USER:$GITHUB_TOKEN -s https://api.github.com/repos/paulbellamy/openbazaar-go/releases/$SERVERTAG > release.txt
     cat release.txt | jq -r ".assets[].browser_download_url" | xargs -n 1 curl -L -O
     cd ..
 
